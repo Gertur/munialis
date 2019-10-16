@@ -1,0 +1,821 @@
+//CONFIGURACION
+$texto: #111111;
+$principal:#0BBF6B;
+$secundario: #0BBF7D;
+$resto: #011D35;
+$rgba-principal:rgba(1, 29, 53, 0.2);
+body
+{
+    font-family: 'Judson', serif;
+    font-size: 1.1rem;
+    color: #1c3643;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+html
+{
+    font-size: 14px;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Quando', serif;
+}
+a, button, link{
+    font-family: 'Montserrat', sans-serif;
+}
+//ESTILOS CONTAINER INFORMATION
+.informacion-alis
+{
+   background: url('/img/informacion.png')
+}
+.carousel-item-aver{
+    //background-image: url('/img/slide-prueba.jpg');
+    //top:-92.48px;
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    filter: saturate(1.5);
+    filter:hue-rotate(20deg);
+}
+.carousel-initial{
+    position: initial;
+}
+/*::::::::::::::::::::::
+ESTILOS PARA EL MENU
+::::::::::::::::::::::::*/
+.redes-sociales
+{
+    position: fixed;
+    top: 250px;
+    z-index: 1100;
+    left: -100px;
+}
+.redes-sociales ul li{
+    width: 100px;
+    height: 38px;
+    background: #0BBF7D;
+    -webkit-transition: width .5s; /* For Safari 3.1 to 6.0 */
+    transition: width 0.5s;
+    list-style-type: none;
+    font-size: 30px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-top: 1px;
+  }
+.redes-sociales ul li a
+{
+    color: $resto;
+}  
+.redes-sociales ul li:hover 
+{
+width: 120px;
+}
+.redes-sociales ul li .link-facebook:hover
+{
+color: #3B5998;
+}
+.redes-sociales ul li .link-gmail:hover
+{
+color: #D44638;
+}
+.redes-sociales ul li .link-youtube:hover
+{
+color: #ff0000;
+}
+.hvr-underline-from-center:before{
+    background: $resto;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+/*:::::::::::::::::::::::::::::::::
+ANIMACIONES Y ESTILOS MENU
+:::::::::::::::::::::::::::::::::::*/
+.removealfeter::after
+{
+    border-right: none;
+    border-left: none;
+}
+.navbar-light .navbar-nav .nav-link.active{
+    color:$resto;
+}
+.navbar-expand-lg .navbar-nav .submenu-municipalidad
+{
+    width: 500px;
+}
+.submenu-municipalidad .dropdown-item:hover{
+    background: none;
+}
+.navbar-expand-lg .navbar-nav .submenu-tramites
+{
+    width: 250px;
+}
+.submenu-tramites .dropdown-item:hover{
+    background: none;
+}
+.navbar-expand-lg .navbar-nav .submenu-servicios
+{
+    width: 400px;
+}
+.submenu-servicios .dropdown-item:hover{
+    background: none;
+}
+.animate
+{
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+}
+@keyframes slideIn {
+    0% {
+      transform: translateY(1rem);
+      opacity: 0;
+    }
+    100% {
+      transform:translateY(0rem);
+      opacity: 1;
+    }
+    0% {
+      transform: translateY(1rem);
+      opacity: 0;
+    }
+}
+@-webkit-keyframes slideIn {
+0% {
+    -webkit-transform: transform;
+    -webkit-opacity: 0;
+}
+100% {
+    -webkit-transform: translateY(0);
+    -webkit-opacity: 1;
+}
+0% {
+    -webkit-transform: translateY(1rem);
+    -webkit-opacity: 0;
+}
+}
+.slideIn {
+-webkit-animation-name: slideIn;
+animation-name: slideIn;
+}
+.estilo-menu
+{
+    background: #1D976C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    transition: all .5s ease;
+    font-size: 1.1rem;
+}
+.estilo-menu.fondo-menu
+{
+    background: #ffffff;
+    padding: .5rem 0;
+    box-shadow: 0px 0px 5px 0px rgba(1, 29, 53, 0.2);
+}
+.input-buscar{
+    background: #ffffff;
+    border: 1px solid #ffffff;
+}
+.input-submit-buscar{
+    border: 0;
+}
+.input-buscar.color-inputbuscar-fixed{
+    border: 1px solid $resto;
+}
+.input-submit-buscar.input-submit-buscar-fixed{
+    border: 3px solid $resto;
+}
+/*::::::::::::::::::::::::::::
+ESTILOS PARA EL BLOQUE BUSCAR
+:::::::::::::::::::::::::::::*/
+.contenedor-bloque-buscar input[type="search"]
+{
+    
+    border-radius: 6px 0 0 6px;
+    padding: .2rem;
+    flex-grow: 1;
+}
+.contenedor-bloque-buscar input[type="submit"]
+{
+    border: 1px solid $resto;
+    border-radius: 0 6px 6px 0;
+    background: $resto;
+    color: #ffffff;
+    padding: .2rem;
+
+}
+/*::::::::::::::::::::::::::::
+ESTILOS PARA EL CAROUSEL
+::::::::::::::::::::::::::::*/
+.carousel-inner .carousel-item .img
+{
+    height: 100vh;
+}
+.carousel-text-box
+{
+    
+    background:rgba(1, 29, 53, 0.7);
+    left: 2rem;
+    bottom: 18%;
+    height: 6.2rem;
+    text-align: left;
+    padding: 1em;
+    width: 40rem;
+    transform: rotate(5deg)
+}
+.iconos-personalizados
+{
+    color: #0BBF7D; 
+    opacity: 1;
+    font-size: 2rem;
+}
+.iconos-personalizados i
+{
+    background-color: $resto;
+    border-radius: 90px 90px 90px 90px;
+}
+.carousel-indicators li
+{
+    background-color: #0BBF7D
+}
+/*:::::::::::::::::::::::::::
+PORTADA ALCELDE Y ENLANCE DIRECTOS
+:::::::::::::::::::::::::::::*/
+.seccion-portada-alcalde
+{
+    text-decoration: none;
+}
+.seccion-portada-alcalde:hover
+{
+    text-decoration: none;
+}
+.text-alcalde-portada
+{
+    color: #ffffff;
+    background: $secundario;
+}
+.enlaces-directos
+{
+    text-decoration-line: none;
+    text-decoration-style: none;
+    color: $resto; 
+}
+.enlaces-directos:hover
+{
+    text-decoration-line: none;
+    text-decoration: none;
+    color: $texto;
+}
+.img-enlaces-directos{
+    border-radius: 50% !important;
+    background: $resto;
+    width: 120px
+}
+.img-enlaces-directos::before,
+.img-enlaces-directos::after {
+	position: absolute;
+	top: 42%;
+	left: 42%;
+	width: 120px;
+	height: 120px;
+	border: 2px solid #ffffff;
+	border-radius: 50%;
+	content: '';
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	-webkit-transform: translateX(-50%) translateY(-50%) scale(0.2);
+	-moz-transform: translateX(-50%) translateY(-50%) scale(0.2);
+	transform: translateX(-50%) translateY(-50%) scale(0.2);
+}
+
+.img-enlaces-directos::after {
+	width: 110px;
+	height: 110px;
+	border-width: 6px;
+	-webkit-transform: translateX(-50%) translateY(-50%) scale(0.8);
+	-moz-transform: translateX(-50%) translateY(-50%) scale(0.8);
+	transform: translateX(-50%) translateY(-50%) scale(0.8);
+}
+
+.img-enlaces-directos:hover::before,
+.img-enlaces-directos:hover::after,
+.img-enlaces-directos:focus::before,
+.img-enlaces-directos:focus::after {
+	opacity: 1;
+	-webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+	-moz-transform: translateX(-50%) translateY(-50%) scale(1);
+	transform: translateX(-50%) translateY(-50%) scale(1);
+}
+
+.hvr-rectangle-out {
+    background: #ffffff;
+}
+.hvr-rectangle-out{
+    background: #F5F6F7;
+}
+.hvr-rectangle-out:before{
+    background-color: rgba(36, 136, 81, 0.8);
+    border-radius: 50%;
+}
+/*SECCION NOTICIAS*/
+.etiqueta-noticia{
+    background-color: $secundario;
+    color: #ffffff;
+    border-radius: 4px 4px 0px 0px;
+}
+.etiqueta-noticia::before
+{
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    //left: 250px;
+    bottom: 0;
+    right: 0;
+    width: 150px;
+    background: url('/img/before1.svg') no-repeat;
+    
+}
+.link-todosnoticias::before
+{
+    content: "/";
+    margin: 0 10px;
+    opacity: .8;
+    
+}
+.link-todosnoticias
+{
+    text-decoration-line: none;
+    color: $texto;
+}
+
+.link-todosnoticias:hover
+{
+    text-decoration-line: none;
+    color: $texto;
+    cursor: pointer;
+    opacity: .5;
+}
+
+.descripcion-noticia
+{
+    border-radius: 5px 5px 0px 0px;
+    background-color: rgba(36, 136, 81, 0.8);
+    left: 0;
+    right: 0;
+    bottom: 0%;
+    height: 5em;
+    text-align: left;
+    padding: 1em;
+    width: 100%;
+}
+.ver-mas
+{
+    background: #ffffff;
+    color: #111111;
+    border-color: #35001D;
+}
+
+/*:::::::::::::::::::
+SECCION REDES SOCIALES EMBEBIDOS
+:::::::::::::::::::::*/
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.tab-facebook 
+{
+    background-color: #3B5998;
+    color: #ffffff;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.tab-youtube 
+{
+    background-color: #ff0000;
+    color: #ffffff;
+}
+/*::::::::::::::::::::::::
+SECCION AREAS TEMATICAS
+::::::::::::::::::::::::::*/
+.footer-noticiatarjeta
+{
+    text-decoration-line: none;
+    color: #ffffff;
+    background: #820047;
+    text-decoration-style: none;
+}
+.footer-noticiatarjeta:hover{
+    text-decoration-line: none;
+    color: #ffffff;
+}
+.footer-culturatarjeta
+{
+    background: #1BCF15;
+    color:#ffffff;
+    text-decoration-line:none;
+}
+.footer-culturatarjeta:hover{
+    text-decoration-line: none;
+    color: #ffffff;
+}
+.footer-dsocialtarjeta
+{
+    background: #CF5D0A;
+    color: #ffffff;
+    text-decoration-line: none;
+}
+.footer-dsocialtarjeta:hover{
+    text-decoration-line: none;
+    color: #ffffff;
+}
+/*:::::::::::::::::::::::
+FOOTER DE LA PAGINA
+:::::::::::::::::::::::::*/
+footer
+{
+    background: $resto;
+    color: #ffffff;
+}
+.footer-information a
+{
+    text-decoration: none;
+    color:#ffffff;
+}
+.hr-footer{
+    background-color:#ffffff;
+}
+/*::::::::::::::::::::::::::::
+ESTILOS SIDEBAR MENU PARA EL ADMINISTRADOR
+:::::::::::::::::::::::::::::*/
+.sidebar{
+    position: absolute;
+    width: 150px;
+    height: 100%;
+    background: $resto;
+    color:#ffffff;
+}
+.sidebar ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.sidebar a {
+    display: block;
+    color:#ffffff;
+    text-decoration: none;
+}
+.contenido-admin{
+ width: 100%;
+ height: 100%;
+ position: absolute;
+ margin-left: 150px;
+ background: #F8F9FA;
+}
+.contenido-admin.abrir{
+    transform: translateX(-150px);
+}
+.button-abrir-cerrar{
+    background: none;
+  border: 0;
+  color: inherit;
+  /* cursor: default; */
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-user-select: none; /* for button */
+   -webkit-appearance: button; /* for input */
+     -moz-user-select: none;
+      -ms-user-select: none;
+}
+/*:::::::::::::::::::::::::::::::::::
+ESTILOS MUNICIPALIDAD
+::::::::::::::::::::::::::::::::::::*/
+.saludo-alcalde::before{
+    //content: 'SALUDO DEL ALCALDE';
+    background: grey;
+    //como transparencia ala fuente
+    //direction: 1tr;
+    
+    font-family: 'Quando', serif;
+}
+.saludo-alcalde{
+    padding: .2rem;
+    border-left: 6px solid $resto;
+    border-radius: 3px;
+    font-weight: 1000;
+    background: #1D976C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.img-saludo{
+    background: grey;
+    height: 400px;
+}
+.menuautoridades{
+    cursor: pointer;
+    text-decoration-line: none;
+    color: #ffffff;
+    width: 100%;
+    border-bottom: 1px solid $secundario;
+    transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+}
+.menuautoridades:hover:before {
+    content: '';
+    border-color: transparent #EEE transparent transparent ;
+    right: 0;
+    border-width:10px;
+    position: absolute;
+    border-style: solid;
+    top: 1rem;
+}
+.menuautoridades:hover {
+    background: $secundario;
+    border-left: 5px solid $resto;
+    text-decoration-line: none;
+    color: #ffffff;
+}
+.menuautoridades i{
+    margin-left: 50px;
+}
+.submenuautoridades i{
+    margin-left: 50px;
+}
+.submenuautoridades{
+    border-bottom: 1px solid $secundario;
+    transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+}
+.submenuautoridades:hover:before {
+    content: '';
+    border-color: transparent #EEE transparent transparent ;
+    right: 0;
+    border-width:10px;
+    position: absolute;
+    border-style: solid;
+    top: 1rem;
+}
+.submenuautoridades:hover {
+    background: $secundario;
+    border-left: 5px solid $resto;
+}
+.menu-autoridades{
+    background: $resto;
+    color: #ffffff;
+    box-shadow: -2px 1px 3px 0px rgba(0, 0, 0, 0.5);
+}
+#menuautoridades div a{
+    text-decoration-line: none;
+    color: #ffffff;
+}
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+REGIDORES
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.card-regidor{
+    border: none;
+    background: none;
+}
+.card-img-top-regidor:hover{
+    opacity: 0.8;
+}
+.card-body-regidor{
+    margin-left: 3%;
+    margin-right: 3%;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+FUNCIONARIOS
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+.subgerencia-table{
+    margin-top: 50%;
+}
+.borde-funcionarios{
+    border-bottom: 1px solid #dee2e6;
+    height: 6rem;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(1, 29, 53, 0.2);
+}
+/*:::::::::::::::::::::::::::::::::::::::::::::
+TURISMO
+:::::::::::::::::::::::::::::::::::::::::::::*/
+.blockquote-footer-turismo{
+    background: none; 
+}
+/*::::::::::::::::::::::
+RECURSOS TURITICOS
+:::::::::::::::::::::::*/
+.recursoturisticocard{
+    position: relative;
+    overflow: hidden;
+    transition: transform .3s;
+    border-radius: 5px;
+    box-shadow: 4px 8px 12px 0 rgba(0,0,0,.7);
+    &__img{
+        width: 100%;
+        transition: transform .2s;
+    }
+
+    &__content{
+        position: absolute;
+        top:0;
+        left:0;
+        padding: 1.5rem;
+        height: 100%;
+        widows: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color:#ffffff;
+        text-align: center;
+        transform: translate(0,100%);
+        transition: transform .2s;
+        //display: none;
+        z-index: 100;
+    }
+    &__like__title{
+        position: absolute;
+        z-index: 103;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: #ffffff;
+        background: rgba(1, 29, 53, 0.7);
+        display: block;
+        padding: 1.2rem;
+     }
+     &__info{
+         color: $resto;
+         //position: absolute;
+         //top:1rem;
+         z-index: 105;
+         font-size: 3rem;
+         position: absolute;
+         z-index: 103;
+         top: 0;
+         left: 0;
+         right: 0;
+         margin:1rem;
+     }
+    &::after{
+        content:"";
+        position: absolute;
+        bottom:0;
+        left:0;
+        //padding: 1.5rem;
+        background: linear-gradient(
+            hsla(4, 99, 61, .7),
+            hsla(208, 96, 61, .7)
+        );
+        height: 0;
+        width: 100%;
+        padding-bottom: 100%;
+        border-radius: 50%;
+        transform: translate(-50%,50%) scale(0.01);
+        transition: inherit;
+    }
+    &:hover{
+        .recursoturisticocard__content{
+            transform: translate(0);
+            transition: all .7s;
+            transition: all .2s;
+           
+        }
+        .recursoturisticocard__img{
+            transform: scale(1.5) rotate(10deg);
+            transition: all .7s;
+            //z-index: 0;
+        }
+        &::after{
+            transform: scale(2.3);
+        }
+        
+    }
+}
+.recursoturisticocard:hover{
+    transform: translateY(-5px);
+    animation: fade-in-stagger 0.7s;
+    cursor: pointer;
+}
+/*::::::::::::::::
+CALENDARIO FESTIVO
+::::::::::::::::::*/
+.timeline{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    list-style-type:none;
+    &::before{
+        position: absolute;
+        left:50%;
+        top:0;
+        content:'';
+        display: block;
+        width: 15px;
+        height: 100%;
+        background: #00bf8f;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #001510, #00bf8f);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #001510, #00bf8f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        z-index: 5;
+    }
+    li{
+        padding: 1rem;
+        &::after{
+            content: '';
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+    }
+    &__direction-l{
+        position: relative;
+        width: 41.7%;
+        float: left;
+        text-align: right;
+        .timeline__flag{
+            -webkit-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+            -moz-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+            box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+        }
+        .timeline__time-wrapper{
+            display: block;
+        }
+        .timeline__flag:after{
+            content: "";
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            height: 0;
+            width: 0;
+            margin-top: -8px;
+            border: solid transparent;
+            border-left-color: rgb(248,248,248);
+            border-width: 8px;
+            pointer-events: none;
+        }
+    }
+    &__direction-r{
+        position: relative;
+        width: 47.7%;
+        float: right;
+        .timeline__flag:before{
+            left:-40px;
+        }
+        .timeline__flag:after{
+            content: "";
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            height: 0;
+            width: 0;
+            margin-top: -8px;
+            border: solid transparent;
+            border-right-color: rgb(248,248,248);
+            border-width: 8px;
+            pointer-events: none;
+        }
+        .timeline__time-wrapper{
+            display: block;
+        }
+        .timeline__desc {
+            margin: 1em 0 0 0.75em;
+          }
+          
+    }
+    &__flag-wrapper{
+        position: relative;
+        display: inline-block;
+        text-align: center;
+    }
+    &__flag{
+        position: relative;
+        display: inline;
+        background: rgba(1, 29, 53, 0.7);
+        padding: 4px 5px;
+        border-radius: 5px;
+        text-align: left;
+        color:#ffffff;
+    }
+    &__direction-l &__flag:before,
+    &__direction-r &__flag:before{
+        position: absolute;
+        top: 50%;
+        right: -60px;
+        content: ' ';
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin-top: -10px;
+        background:$resto;
+        border-radius: 10px;
+        border: 4px solid #FB3A29;
+        z-index: 10;
+    }
+    &__desc{
+        margin: 1em .8em 0 0;
+    }
+}
