@@ -1,7 +1,7 @@
 {
   "name": "municipalidadalis",
   "version": "1.0.0",
-  "description": "casi 50% avance",
+  "description": "descripcion desde pc municipalidad de alis",
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon backend/index.js",
