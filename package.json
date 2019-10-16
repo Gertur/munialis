@@ -1,7 +1,7 @@
 {
   "name": "municipalidadalis",
   "version": "1.0.0",
-  "description": "",
+  "description": "casi 50% avance",
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon backend/index.js",
