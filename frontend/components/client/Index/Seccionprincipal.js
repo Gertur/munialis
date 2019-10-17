@@ -169,6 +169,11 @@ export default class Seccionprincipal extends Component{
                         </div>
                     </div>
                 </div>
+                <div className="row">
+                    <div className="col-12">
+                        <h4 className="etiqueta-noticia p-1 h4">Enlaces de interés</h4>
+                    </div>
+                </div>
                 {/**SECCION FOOTER */}
             </div>
         )
