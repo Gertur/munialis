@@ -819,3 +819,12 @@ CALENDARIO FESTIVO
         margin: 1em .8em 0 0;
     }
 }
+/*::::::::::::::::::::::::::::::::
+REGISTRO CIVIL
+:::::::::::::::::::::::::::::::::*/
+.registro-segun-corresponda{
+    padding: .2rem;
+    border-left: 5px solid $resto;
+    border-radius: 3px;
+    //font-weight: 1000;
+}
