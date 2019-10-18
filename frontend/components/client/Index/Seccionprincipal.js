@@ -3,16 +3,11 @@ import Noticias from './Noticias';
 import Footer from '../Partials/Footer';
 import GoogleMapReact from 'google-map-react';
 import {Link} from 'react-router-dom';
+import Youtube from '../Partials/Youtube';
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
  
 export default class Seccionprincipal extends Component{
-    static defaultProps = {
-        center: {
-          lat: 59.95,
-          lng: 30.33
-        },
-        zoom: 11
-      };
+
     render(){
         const meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
         const f= new Date();
@@ -101,7 +96,7 @@ export default class Seccionprincipal extends Component{
                                 </div>
                             </div>
                             <div className="tab-pane" id="tab2" role="tabpanel" aria-expanded="false">
-                            <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis repellat commodi odio, numquam, repellendus ex laboriosam provident eum dolorem, reiciendis at dicta eos distinctio voluptatum! Reiciendis nulla nobis aspernatur dolore?</h2>
+                                {<Youtube/>}
                             </div>
                         </div>
                     </div>
@@ -149,27 +144,17 @@ export default class Seccionprincipal extends Component{
                     <div className="col-4">
                         <ul className="nav nav-tabs">
                             <li className="nav-item">
-                                <a href="" className="nav-link active">ubicación</a>
+                                <a href="" className="nav-link active tab-ubicacion">Ubicación</a>
                             </li>
                         </ul>
                         <div className="tab-content">
-                            <div className="tab-pane active" id="map" width="400px" height="500px">
-                            <GoogleMapReact
-                                bootstrapURLKeys={"AIzaSyC3Wn3l_CTFv7zCUVpRs1N9vqrA7AKJEQ8"}
-                                defaultCenter={this.props.center}
-                                defaultZoom={this.props.zoom}
-                                >
-                                <AnyReactComponent
-                                    lat={59.955413}
-                                    lng={30.337844}
-                                    text="My Marker"
-                                />
-                                </GoogleMapReact>
+                            <div className="tab-pane active">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31188.95638951966!2d-75.78886809891428!3d-12.274005326477496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910f036d79c2fff7%3A0xdf535e537800dba0!2sAlis%2015786!5e0!3m2!1ses!2spe!4v1571328708002!5m2!1ses!2spe" width="100%" height="230px" frameBorder="0" style={{border:0}} allowFullScreen=""></iframe>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="row">
+                <div className="row mt-2">
                     <div className="col-12">
                         <h4 className="etiqueta-noticia p-1 h4">Enlaces de interés</h4>
                     </div>

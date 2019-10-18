@@ -31,7 +31,7 @@ $('.menu-sidebar-admin').on('click',function(){
 
 {/**CONFIGURACION DEL CAROUSEL */}
 
-$('.carousel').carousel({
-    interval: 800
-  })
-    
+
+
+// YOU WILL NEED TO ADD YOUR OWN API KEY IN QUOTES ON LINE 5, EVEN FOR THE PREVIEW TO WORK.
+//

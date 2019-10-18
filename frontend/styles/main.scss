@@ -429,6 +429,11 @@ SECCION AREAS TEMATICAS
     text-decoration-line: none;
     color: #ffffff;
 }
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.tab-ubicacion 
+{
+    background-color: $resto;
+    color: #ffffff;
+}
 /*:::::::::::::::::::::::
 FOOTER DE LA PAGINA
 :::::::::::::::::::::::::*/
