@@ -37,7 +37,7 @@ $('.menu-sidebar-admin').on('click',function(){
 $(document).ready(function () {
 
     var key = "AIzaSyC3Wn3l_CTFv7zCUVpRs1N9vqrA7AKJEQ8";
-    var playlistId = 'PL2fnLUTsNyq7A335zB_RpOzu7hEUcSJbB';
+    var playlistId = 'PLBn3IPeV4-iJJJytsRAogq1b-eHjHKAlN';
     var URL = 'https://www.googleapis.com/youtube/v3/playlistItems';
 
 
@@ -60,30 +60,24 @@ $(document).ready(function () {
 
     function mainVid(id) {
         $('#video').html(`
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<iframe width="100%" height="170" src="https://www.youtube.com/embed/${id}" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
 				`);
-    }
-
-		
+    }		
     function resultsLoop(data) {
 
         $.each(data.items, function (i, item) {
 
             var thumb = item.snippet.thumbnails.medium.url;
-            var title = item.snippet.title;
+            var title = item.snippet.title.substring(0,50);
             var desc = item.snippet.description.substring(0, 100);
             var vid = item.snippet.resourceId.videoId;
-
-
             $('main').append(`
-							<article class="item" data-key="${vid}">
-
+							<article class="item article-embebido-youtube" data-key="${vid}">
 								<img src="${thumb}" alt="" class="thumb">
 								<div class="details">
-									<h4>${title}</h4>
-									<p>${desc}</p>
+									<p class="title text-uppercase"><strong>${title}</strong></p>
+									<p class="descripcion text-lowercase">${desc}</p>
 								</div>
-
 							</article>
 						`);
         });
@@ -97,3 +91,5 @@ $(document).ready(function () {
 
 
 });
+
+/**CAROUSEL ENLACES DE INTERES */

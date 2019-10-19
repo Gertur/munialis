@@ -434,6 +434,14 @@ SECCION AREAS TEMATICAS
     background-color: $resto;
     color: #ffffff;
 }
+/*::::::::::::::::::::::::
+SECCION AREAS DE INTERES
+:::::::::::::::::::::::::*/
+.next-color-interes,.prev-color-interes{
+    background: $resto;
+    width: 2rem;
+    color: $resto;
+}
 /*:::::::::::::::::::::::
 FOOTER DE LA PAGINA
 :::::::::::::::::::::::::*/
@@ -836,3 +844,52 @@ REGISTRO CIVIL
 .hr-general{
     background-color: $resto;
 }
+/*::::::::::::::::::::::::::::
+EMBEBIDO YOUTUBE
+::::::::::::::::::::::::::::*/
+.section-enbebido-youtube {
+	position: relative;
+	text-align: center;
+	width: 100%;
+	background-color: #fff;
+}
+.mainmain-enbebido-youtube {
+	padding: 1px;
+}
+
+.article-embebido-youtube {
+	display: flex;
+	align-items: center;
+	border: 2px solid white;
+	border-radius: 8px;
+    padding: 0 3px;
+    background: rgba(1, 29, 53, 0.2);
+	&:hover {
+        border: 1px solid $resto;
+        cursor: pointer;
+	}
+}
+
+.thumb {
+	height: 50px;
+	border-radius: 3px;
+}
+.details{
+    margin-left: .5rem;
+}
+.details{
+    .title{
+        color: $resto;
+        line-height: 13px;
+        font-size: 1rem;
+        margin-bottom: 1px;
+    }
+}
+.details{
+    .descripcion{
+        line-height: 13px;
+        font-size: .8rem;
+    }
+}
+
+

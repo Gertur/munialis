@@ -144,10 +144,10 @@ export default class Seccionprincipal extends Component{
                     <div className="col-4">
                         <ul className="nav nav-tabs">
                             <li className="nav-item">
-                                <a href="" className="nav-link active tab-ubicacion">Ubicación</a>
+                                <a href="#tab1" className="nav-link active tab-ubicacion">Ubicación</a>
                             </li>
                         </ul>
-                        <div className="tab-content">
+                        <div className="tab-content" id="tab1">
                             <div className="tab-pane active">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31188.95638951966!2d-75.78886809891428!3d-12.274005326477496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910f036d79c2fff7%3A0xdf535e537800dba0!2sAlis%2015786!5e0!3m2!1ses!2spe!4v1571328708002!5m2!1ses!2spe" width="100%" height="230px" frameBorder="0" style={{border:0}} allowFullScreen=""></iframe>
                             </div>
@@ -157,6 +157,69 @@ export default class Seccionprincipal extends Component{
                 <div className="row mt-2">
                     <div className="col-12">
                         <h4 className="etiqueta-noticia p-1 h4">Enlaces de interés</h4>
+                    </div>
+                    <div className="carousel slide ml-3" data-ride="carousel" id="carouselExampleControls">
+                        <div className="carousel-inner">
+                            <div className="carousel-item active" data-interval="6000">
+                                <div className="d-flex flex-row">
+                                    <a href="">
+                                        <img src="https://seeklogo.com/images/R/reniec-logo-64C752291C-seeklogo.com.png" alt="" width="300px" className="d-block w-100"/>
+                                    </a>
+                                    <a href="">
+                                        <img src="https://busquedas.elperuano.pe/static/img/logo.png" alt="" className="d-block w-100"/>
+                                    </a>
+                                    <a href="">
+                                        <img src="https://www.bn.com.pe/imagenes/logo-banco-nacion.png" alt="" className="d-block w-100"/>
+                                    </a>
+                                    <a href="">
+                                        <img src="https://portal.osce.gob.pe/osce/sites/default/files/LOGO%20OSCE%20ok.png" alt="" className="d-block w-100"/>
+                                    </a>
+                                    <a href="">
+                                        <img src="https://plataformaanticorrupcion.pe/wp-content/uploads/2017/07/2-3-1-e1501713201959.png" alt="" className="d-block w-100"/>
+                                    </a>
+                                    <a href="">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAeQzcPH3UBR4icSgjyx34-wJKfr0e41XOaaVidrrc_oWmLFig" alt="" className="d-block w-100"/>
+                                    </a>
+                                    <a href="">
+                                        <img src="https://repositoriopncvfs.pe/wp-content/uploads/2018/02/inei.png" alt="" className="d-block w-100"/>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="carousel-item" data-interval="20000">
+                            <div className="d-flex flex-row">
+                                    <a href="">
+                                        <img src="https://seeklogo.com/images/R/reniec-logo-64C752291C-seeklogo.com.png" alt="" width="300px" className="d-block w-100"/>
+                                    </a>
+                                    <a href="">
+                                        <img src="https://busquedas.elperuano.pe/static/img/logo.png" alt="" className="d-block w-100"/>
+                                    </a>
+                                    <a href="">
+                                        <img src="https://www.bn.com.pe/imagenes/logo-banco-nacion.png" alt="" className="d-block w-100"/>
+                                    </a>
+                                    <a href="">
+                                        <img src="https://portal.osce.gob.pe/osce/sites/default/files/LOGO%20OSCE%20ok.png" alt="" className="d-block w-100"/>
+                                    </a>
+                                    <a href="">
+                                        <img src="https://plataformaanticorrupcion.pe/wp-content/uploads/2017/07/2-3-1-e1501713201959.png" alt="" className="d-block w-100"/>
+                                    </a>
+                                    <a href="">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAeQzcPH3UBR4icSgjyx34-wJKfr0e41XOaaVidrrc_oWmLFig" alt="" className="d-block w-100"/>
+                                    </a>
+                                    
+                                    <a href="">
+                                        <img src="https://repositoriopncvfs.pe/wp-content/uploads/2018/02/inei.png" alt="" className="d-block w-100"/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev prev-color-interes" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" style={{color:"black"}} aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next next-color-interes" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </div>
                 {/**SECCION FOOTER */}
