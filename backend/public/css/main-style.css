@@ -13783,6 +13783,18 @@ SECCION AREAS TEMATICAS
   text-decoration-line: none;
   color: #ffffff; }
 
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.tab-ubicacion {
+  background-color: #011D35;
+  color: #ffffff; }
+
+/*::::::::::::::::::::::::
+SECCION AREAS DE INTERES
+:::::::::::::::::::::::::*/
+.next-color-interes, .prev-color-interes {
+  background: #011D35;
+  width: 2rem;
+  color: #011D35; }
+
 /*:::::::::::::::::::::::
 FOOTER DE LA PAGINA
 :::::::::::::::::::::::::*/
@@ -14146,4 +14158,44 @@ REGISTRO CIVIL
 
 .hr-general {
   background-color: #011D35; }
+
+/*::::::::::::::::::::::::::::
+EMBEBIDO YOUTUBE
+::::::::::::::::::::::::::::*/
+.section-enbebido-youtube {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  background-color: #fff; }
+
+.mainmain-enbebido-youtube {
+  padding: 1px; }
+
+.article-embebido-youtube {
+  display: flex;
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 0 3px;
+  background: rgba(1, 29, 53, 0.2); }
+  .article-embebido-youtube:hover {
+    border: 1px solid #011D35;
+    cursor: pointer; }
+
+.thumb {
+  height: 50px;
+  border-radius: 3px; }
+
+.details {
+  margin-left: .5rem; }
+
+.details .title {
+  color: #011D35;
+  line-height: 13px;
+  font-size: 1rem;
+  margin-bottom: 1px; }
+
+.details .descripcion {
+  line-height: 13px;
+  font-size: .8rem; }
 

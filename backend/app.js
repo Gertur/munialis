@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname,('public'))));
 //::::::ROUTES::::://
 app.use('/api/noticias',require('./routes/noticias'));
-app.use('/api/profileimgupload',require('./routes/uploadfile'));
+app.use('/api/profile',require('./routes/uploadfile'));
 
 //::::::::MAPEO PARA RENDERIZAR HTML, DESDE REACT EN EL INDEX.HTML::::://
 app.get('/*', function(req, res, next) {
