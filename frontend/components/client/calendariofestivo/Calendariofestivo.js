@@ -26,6 +26,9 @@ export default class Turismo extends Component{
                                                 <div className="timeline__desc h5 text-justify">
                                                 Se danza en honor al Niño Jesús cada primero de enero, varios negritos bien enternados deleitan con sus coreografías y movimientos.
                                                 </div>
+                                                <figure className="imagen-calendario-festivo mt-2">
+                                                    <img src="./img/negreria.jpg" alt="" className="w-100"/>
+                                                </figure>
                                             </div>
                                         </li>
                                         <li>
@@ -37,6 +40,9 @@ export default class Turismo extends Component{
                                                 <div className="timeline__desc h5 text-justify">
                                                 Aniversario de la Creación Política del Distrito de Alis, asi mismo de lleva a cabo el carnaval Alisino.
                                                 </div>
+                                                <figure className="imagen-calendario-festivo mt-2">
+                                                    <img src="./img/aniversario-comunal.jpg" alt="" className="w-100"/>
+                                                </figure>
                                             </div>
                                         </li>
                                         <li>
@@ -49,6 +55,9 @@ export default class Turismo extends Component{
                                                 <strong>Fiesta de La limpia acequia y la cashahuayta</strong>.
                                                 La mayor pleitesía al agua, se da el tercer domingo de junio. Desde las alturas de la laguna de silacocha, varios comuneros bajan limpiando los canales que transportan el agua a los campos de cultivos, mientras los solteros y solteras alegran la fiesta con sus cantos y danzas, para posteriormente llegar danzando solteros y comuneros al lugar de Yarinca, donde los mayordomos los reciben con una rica pachamanca, primero almuerzan los comuneros y posteriormente los solteros, después del rico almuerzo se procese a la presentación de los danzantes los Mashas, donde muestran sus mejores dotes en el baile acompañado con la gracia y humor de los Mashas.
                                                 </div>
+                                                <figure className="imagen-calendario-festivo mt-2">
+                                                    <img src="./img/limpia-cequia.jpg" alt="" className="w-100"/>
+                                                </figure>
                                             </div>
                                         </li>
                                         <li>
@@ -60,6 +69,9 @@ export default class Turismo extends Component{
                                                 <div className="timeline__desc h5">
                                                 Es la fiesta patronal y religiosa más importante del distrito que se desarrolla del 14 al 17 de agosto de todos los años. Esta fiesta costumbrista que viene asociado desde la creación del pueblo de Alis, se baila en homenaje a la Virgen de la Asunción y su devoto el Patrón San Lorenzo de Alis.
                                                 </div>
+                                                <figure className="imagen-calendario-festivo mt-2">
+                                                    <img src="./img/palla-alisina.jpg" alt="" className="w-100"/>
+                                                </figure>
                                             </div>
                                         </li>
                                         <li>
@@ -71,6 +83,9 @@ export default class Turismo extends Component{
                                                 <div className="desc h5 text-justify">
                                                 <strong>Aniversario de la Comunidad Campesina San Lorenzo de Alis</strong>
                                                 </div>
+                                                <figure className="imagen-calendario-festivo mt-2">
+                                                    <img src="./img/aniversario-comunal.jpg" alt="" className="w-100"/>
+                                                </figure>
                                             </div>
                                         </li>
                                         <li>
@@ -82,6 +97,9 @@ export default class Turismo extends Component{
                                                 <div className="desc h5 text justify">
                                                 Se danza en honor al Niño Jesús cada 25 de diciembre.
                                                 </div>
+                                                <figure className="imagen-calendario-festivo mt-2">
+                                                    <img src="./img/aniversario-comunal.jpg" alt="" className="w-100"/>
+                                                </figure>
                                             </div>
                                         </li>
                                     </ul>

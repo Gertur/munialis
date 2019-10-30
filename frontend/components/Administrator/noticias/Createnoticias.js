@@ -10,43 +10,40 @@ export default class Createnoticias extends Component{
         titulo:'',
         descripcion:'',
         imagenPath:null,
+        selectedFile:null
     }
-    
-
-    async componentDidMount(){
-        this.getNoticias();
-    }
-    getNoticias = async()=>{
-        const res = await axios.get(URI+'/api/noticias');
-        this.setState({
-            noticias:res.data
-        })
-    }
+    onChangefileupload = (e) => {
+		this.setState({
+			selectedFile: e.target.files[0]
+		})
+		console.log(this.state.selectedFile)
+	}
+   
     onInputOnChange = (e) =>{
         this.setState({
             [e.target.name]:e.target.value
         })
-
     }
-    onChangeInputFile = (e) =>{
-        this.setState({
-            imagenPath:e.target.files[0]
-        })
-    }
+   
     onSubmit = async e =>{
         e.preventDefault();
-        const formData = new FormData();
-        formData.append('imagen',this.state.imagenPath);
-        formData.append('titulo',this.state.titulo);
-        formData.append('descripcion',this.state.descripcion);
-        await axios.post(URI+'/api/noticias',formData);
-        this.getNoticias();
-        
+        // const formData = new FormData();
+        // formData.append('profileImage',this.state.selectedFile,this.state.selectedFile.name);
+        // formData.append('titulo',this.state.titulo);
+        // formData.append('descripcion',this.state.descripcion);
+        const newNoticia= {
+            titulo:this.state.titulo,
+            descripcion:this.state.descripcion,
+            profileImage:this.state.selectedFile
+        }
+        await axios.post(URI+'/api/noticias',newNoticia,{
+			headers: {
+				'accept': 'application/json',
+				'Accept-Language': 'en-US,en;q=0.8',
+				'Content-Type': `multipart/form-data; boundary=${data._boundary}`,
+			   }});
     }
-    deleteNoticia=async(id)=>{
-        await axios.delete(URI+'/api/noticias/'+id);
-        this.getNoticias();
-    }   
+    
     render(){
         return(
             <div className="container mt-2">
@@ -61,35 +58,12 @@ export default class Createnoticias extends Component{
                                 <textarea className="form-control" name="descripcion" onChange={this.onInputOnChange} id="" cols="30" rows="10" placeholder="Descripcion de la noticia"></textarea>
                             </div>
                             <div className="input-group mb-3">
-                                <div className="custom-file">
-                                    <input type="file" onChange={this.onChangeInputFile} className="custom-file-input" name="imagen"/>
-                                    <label htmlFor="image" className="custom-file-label">Escoge una imagen</label>
-                                </div>
+                                <input type="file" onChange={this.onChangefileupload}/>   
                             </div>
                             <button className="btn btn-primary">
                                 Guardar Noticia
                             </button>
                         </form>
-                    </div>
-                    <div className="col-6">
-                        <div className="row">
-                            
-                            {
-                                this.state.noticias.map(noticia=>(
-                                <div className="col-6" key={noticia._id}>
-                                    <div className="card">
-                                        <img src={URI+noticia.imagenPath} className="card-img-top" height="150px" alt=""/>
-                                        <div className="card-body">
-                                            <h5 className="card-title">{noticia.titulo}</h5>
-                                            <p className="card-text">{noticia.descripcion}</p>
-                                            <a href="#" className="btn btn-danger" onClick={()=>this.deleteNoticia(noticia._id)}>Eliminar</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                ))
-                            }
-                            
-                        </div>
                     </div>
                 </div>
             </div>

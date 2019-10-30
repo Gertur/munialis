@@ -28,8 +28,21 @@ require('./img/regidor-ronald.jpg')
 require('./img/regidora-samy.jpg')
 require('./img/mision.jpg')
 require('./img/vision.jpg')
-
-
+require('./img/sub-gerencia-desarrollo-social.jpg')
+require('./img/reseña-alis.jpg')
+require('./img/negreria.jpg')
+require('./img/laguna-silacocha.jpg')
+require('./img/huacta.jpg')
+require('./img/coricoto.jpg')
+require('./img/bosque-lloque.jpg')
+require('./img/cañon.jpg')
+require('./img/tapo.jpg')
+require('./img/caida-angel.jpg')
+require('./img/cueva-murcielagos.jpg')
+require('./img/slide4.jpg')
+require('./img/aniversario-comunal.jpg')
+require('./img/limpia-cequia.jpg')
+require('./img/palla-alisina.jpg')
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -51,6 +64,8 @@ import Recursosturiticos from './components/client/Recursosturisticos/Recursostu
 import Cultura from './components/client/cultura/Cultura';
 import Calendariofestivo from './components/client/calendariofestivo/Calendariofestivo';
 import Registrocivil from './components/client/registrocivil/Registrocivil';
+import Transparencia from './components/client/transparencia/Transparencia';
+import Desarrollosocial from './components/client/desarrollosocial/Desarrollosocial';
 function App() {
     return (
       <Router>
@@ -66,6 +81,9 @@ function App() {
             <Route path="/cultura" component={Cultura} />
             <Route path="/calendario-festivo" component={Calendariofestivo} />
             <Route path="/registro-civil" component={Registrocivil} />
+            <Route path="/transparencia" component={Transparencia} />
+            <Route path="/desarrollo-social" component={Desarrollosocial} />
+            
       </Router>
     );
   }

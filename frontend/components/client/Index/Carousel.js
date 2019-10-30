@@ -8,6 +8,7 @@ export default class Carousel extends Component{
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                 </ol>
                 <div className="carousel-inner">
                     <div className="carousel-item active carousel-item-portada">
@@ -26,6 +27,13 @@ export default class Carousel extends Component{
                     </div>
                     <div className="carousel-item carousel-item-portada">
                         <img className="carousel-item-aver w-100 d-block" src="img/slide3.jpg" alt="Third slide" height="auto"/>
+                        <div className="carousel-caption d-none d-md-block carousel-text-box animated zoomInLeft">
+                            <h3 className="animated bounceInRight rotateOutDownLeft delay-5s">Alis</h3>
+                            <h5 className="animated bounceInRight delay-2s">Plaza principal de nuestro distrito de Alis</h5>
+                        </div>
+                    </div>
+                    <div className="carousel-item carousel-item-portada">
+                        <img className="carousel-item-aver w-100 d-block" src="img/slide4.jpg" alt="Third slide" height="auto"/>
                         <div className="carousel-caption d-none d-md-block carousel-text-box animated zoomInLeft">
                             <h3 className="animated bounceInRight rotateOutDownLeft delay-5s">Alis</h3>
                             <h5 className="animated bounceInRight delay-2s">Plaza principal de nuestro distrito de Alis</h5>

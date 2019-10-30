@@ -48,12 +48,12 @@ export default class Navegacion extends Component{
                                                 <div className="col-6">
                                                     <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/Municipalidad'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>La municipalidad</Link>
                                                     <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/regidores'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Concejo Municipal</Link>
-                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/Municipalidad'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Organigrama</Link>
+                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/organigrama'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Organigrama</Link>
                                                 </div>
                                                 <div className="col-6">
-                                                    
-                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/Municipalidad'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Noticias</Link>
-                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/Municipalidad'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Presupuesto Participativo</Link>
+                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/noticias'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Noticias</Link>
+                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/presupuesto-participativo'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Presupuesto Participativo</Link>
+                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/transparencia'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Transparencia</Link>
                                                 </div>
                                             </div>
                                         </div>
@@ -68,9 +68,9 @@ export default class Navegacion extends Component{
                                         <div className="dropdown-menu animate slideIn submenu-tramites">
                                             <div className="row">
                                                 <div className="col-12">
-                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/Municipalidad'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>TUPA</Link>
+                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/tupa'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>TUPA</Link>
                                                     <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/registro-civil'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Registro Civil</Link>
-                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/Municipalidad'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Consultas</Link>
+                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/consultas'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Consultas</Link>
                                                 </div>
                                             </div>
                                         </div>
@@ -85,8 +85,8 @@ export default class Navegacion extends Component{
                                         <div className="dropdown-menu animate slideIn submenu-servicios">
                                             <div className="row">
                                                 <div className="col-6">
-                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/Municipalidad'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Desarrollo Social</Link>
-                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/Municipalidad'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Salud</Link>
+                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/desarrollo-social'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Desarrollo Social</Link>
+                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/salud'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Salud</Link>
                                                 </div>
                                                 <div className="col-6">
                                                     <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/cultura'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Cultura</Link>
