@@ -12,10 +12,10 @@ export default class Sidebar extends Component{
                 Calendario Festivo
                 <i className="fas fa-angle-right hvr-icon"></i>
             </Link>
-            <Link className="menuautoridades hvr-icon-hang p-3" to="/galeria-de-fotos-cultura">
+            {/* <Link className="menuautoridades hvr-icon-hang p-3" to="/galeria-de-fotos-cultura">
                 Galeria de Fotos
                 <i className="fas fa-angle-right hvr-icon"></i>
-            </Link>
+            </Link> */}
         </div>
         )
     }

@@ -8,6 +8,7 @@ import WOW from 'wow.js/dist/wow'
 export default class Index extends Component{
     componentDidMount(){
         new WOW().init();
+        document.title = "HOME - Municipalidad Distrital de Alis";
     }
      
     render(){

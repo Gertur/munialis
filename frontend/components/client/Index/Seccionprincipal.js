@@ -29,14 +29,14 @@ export default class Seccionprincipal extends Component{
                     {/**HOBRAS, TURISMO, SALUD, EDUCACION */}
                     <div className="col-4">
                         <div className="row d-flex justify-content-between ml-2">
-                        <Link to="/obras" className="col-6 enlaces-directos">
+                            <Link to="/obras" className="col-6 enlaces-directos">
                                 <div className="img-enlaces-directos p-4">
                                 <img src="./img/hobras.svg" className="img-fluid wow jackInTheBox" alt=""/>
                                 </div>  
                                 <h6 className="ml-4"><strong>OBRAS</strong></h6>
                                 
                             </Link>
-                            <Link to="/educacion" className="col-6 enlaces-directos">
+                            <Link to="/" className="col-6 enlaces-directos">
                                 <div className="img-enlaces-directos p-4">
                                 <img src="./img/educacion.svg" className="img-fluid wow jackInTheBox" alt=""/>
                                 </div>
@@ -44,7 +44,7 @@ export default class Seccionprincipal extends Component{
                             </Link>
                         </div>
                         <div className="row d-flex justify-content-between ml-2">
-                        <Link to="/salud" className="col-6 enlaces-directos">
+                        <Link to="/" className="col-6 enlaces-directos">
                                 <div className="img-enlaces-directos p-4">
                                 <img src="./img/salud.svg" className="img-fluid wow jackInTheBox" alt=""/>
                                 </div>
@@ -61,11 +61,11 @@ export default class Seccionprincipal extends Component{
                         </div>
                     </div>
                     <div className="col-4">
-                        <a href="">
+                        <Link to="/todas-actividades">
                             <div className="pt-0">
                                 <img className="d-block w-100" src="./img/agenda.jpg" alt=""/>
                             </div>
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 {/**SECCION REDES SOCIALES */}
@@ -75,7 +75,7 @@ export default class Seccionprincipal extends Component{
                         <h4 className="etiqueta-noticia p-1">Noticias     Alis</h4>
                         <p className="blockquote-footer p-1">
                             <strong>{f.getDate()+' de '+meses[f.getMonth()]+' del '+f.getFullYear()}</strong>
-                            <a className="link-todosnoticias" href="" >Ver todas las Noticias</a>
+                            <Link className="link-todosnoticias" to="/noticias" >Ver todas las Noticias</Link>
                         </p>
                         {<Noticias/>}
                     </div>
@@ -112,31 +112,31 @@ export default class Seccionprincipal extends Component{
                             <div className="col-4 mt-2">
                                 <div className="card">
                                     <img src="./img/turismo-alis.jpg" alt="" className="card-img-top img-fluid"/>
-                                    <a href="" className="footer-noticiatarjeta">
+                                    <Link to="/turismo" className="footer-noticiatarjeta">
                                         <div className="card-footer text-center">
                                             <h3>Turismo <i className="fas fa-cat ml-3"></i></h3>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="col-4 mt-2">
                                 <div className="card">
                                     <img src="./img/cultura-alis.jpg" alt="" className="card-img-top img-fluid"/>
-                                    <a href="" className="footer-culturatarjeta">
+                                    <Link to="/cultura" className="footer-culturatarjeta">
                                         <div className="card-footer text-center">
                                             <h3>Cultura <i className="fas fa-cat ml-3"></i></h3>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="col-4 mt-2">
                                 <div className="card">
                                     <img src="./img/desarrollo-social.jpg" alt="" className="card-img-top img-fluid"/>
-                                    <a href="" className="footer-dsocialtarjeta">
+                                    <Link to="/rumbo_centenario" className="footer-dsocialtarjeta">
                                         <div className="card-footer text-center">
                                             <h5>Rumbo al centenario <i className="fas fa-cat ml-3"></i></h5>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

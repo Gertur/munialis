@@ -8,7 +8,7 @@ export default class Footer extends Component{
                     <div className="row">
                         <div className="col-5 mt-2 mb-2">
                             <div className="media">
-                                <img src="./img/logo.png" alt="Alis" className="d-flex align-self-start mr-3 rounded-circle" width="70px"/>
+                                <img src="https://munialisstatic.s3-sa-east-1.amazonaws.com/logo.png" alt="Alis" className="d-flex align-self-start mr-3 rounded-circle" width="70px"/>
                                 <div className="media-body">
                                     <h3>Sobre nosotros</h3>
                                     <hr className="hr-footer"/>
@@ -43,9 +43,9 @@ export default class Footer extends Component{
                             <h3>Mas informacion</h3>
                             <hr className="hr-footer"/>
                             <div className="list-group footer-information">
-                                <a href="#"><i className="fas fa-map-marked-alt mr-2"></i>Contactos Turiticos</a>
-                                <a href="#"><i className="fas fa-archway mr-2"></i>Te invitamos a conocer Alis</a>
-                                <a href="#"><i className="fas fa-file-alt mr-2"></i> Registro Civil</a>
+                                <a href="/turismo"><i className="fas fa-map-marked-alt mr-2"></i>Contactos Turiticos</a>
+                                <a href="/turismo"><i className="fas fa-archway mr-2"></i>Te invitamos a conocer Alis</a>
+                                <a href="/registro-civil"><i className="fas fa-file-alt mr-2"></i> Registro Civil</a>
                             </div>
                         </div>
                     </div>

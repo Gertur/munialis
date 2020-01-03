@@ -4,6 +4,9 @@ import Footer from '../Partials/Footer';
 import Sidebar from '../Partials/Sidebar';
 
 export default class Vision extends Component{
+    componentDidMount(){
+        document.title = "Visión - Municipalidad Distrital de Alis";
+    }
     render(){
         return(
             <div>

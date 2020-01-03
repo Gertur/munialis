@@ -31,9 +31,9 @@ export default class Navegacion extends Component{
                                 <span className="navbar-toggler-icon"></span>
                             </button>
                             <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                                <a href="/" className="navbar-brand"><img src="./img/logo2.png" alt="" width="180px"/></a>
+                                <a href="/" className="navbar-brand"><img src="https://munialisstatic.s3-sa-east-1.amazonaws.com/logo2.png" alt="" width="180px"/></a>
                                 <a href="">
-                                    <img src="./img/marca-alis.png" width="100px" alt="" className="ml-3"/>
+                                    <img src="https://munialisstatic.s3-sa-east-1.amazonaws.com/marca-alis.png" width="100px" alt="" className="ml-3"/>
                                 </a>
                                 <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
                                     <li className="nav-item dropdown mr-3">
@@ -48,11 +48,11 @@ export default class Navegacion extends Component{
                                                 <div className="col-6">
                                                     <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/Municipalidad'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>La municipalidad</Link>
                                                     <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/regidores'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Concejo Municipal</Link>
-                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/organigrama'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Organigrama</Link>
+                                                    {/* <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/organigrama'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Organigrama</Link> */}
                                                 </div>
                                                 <div className="col-6">
                                                     <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/noticias'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Noticias</Link>
-                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/presupuesto-participativo'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Presupuesto Participativo</Link>
+                                                    {/* <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/presupuesto-participativo'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Presupuesto Participativo</Link> */}
                                                     <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/transparencia'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Transparencia</Link>
                                                 </div>
                                             </div>
@@ -68,9 +68,9 @@ export default class Navegacion extends Component{
                                         <div className="dropdown-menu animate slideIn submenu-tramites">
                                             <div className="row">
                                                 <div className="col-12">
-                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/tupa'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>TUPA</Link>
+                                                    {/* <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/tupa'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>TUPA</Link> */}
                                                     <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/registro-civil'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Registro Civil</Link>
-                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/consultas'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Consultas</Link>
+                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/rumbo_centenario'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Rumbo al Centenario</Link>
                                                 </div>
                                             </div>
                                         </div>
@@ -86,12 +86,12 @@ export default class Navegacion extends Component{
                                             <div className="row">
                                                 <div className="col-6">
                                                     <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/desarrollo-social'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Desarrollo Social</Link>
-                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/salud'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Salud</Link>
+                                                    {/* <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/salud'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Salud</Link> */}
+                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/turismo'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Turismo</Link>
                                                 </div>
                                                 <div className="col-6">
                                                     <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/cultura'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Cultura</Link>
-                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/turismo'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Turismo</Link>
-                                                    <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/Admin'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Admin</Link>
+                                                    {/* <Link className="dropdown-item hvr-underline-from-center p-2 pl-4 hvr-icon-wobble-horizontal" to='/Admin'><i className="mr-3 fa fa-arrow-right hvr-icon"></i>Admin</Link> */}
                                                 </div>
                                             </div>
                                         </div>

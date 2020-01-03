@@ -2,6 +2,9 @@ import React,{Component} from 'react';
 import Navegacion from '../Partials/Navegacion';
 import Footer from '../Partials/Footer';
 export default class Registrocivil extends Component{
+    componentDidMount(){
+        document.title="Registro Civil - Municipalidad Distrital de Alis";
+    }
     render(){
         return(
             <div>

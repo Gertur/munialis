@@ -5,6 +5,9 @@ import Footer from '../Partials/Footer';
 import Sidebar from '../Partials/Sidebar';
 
 export default class Regidores extends Component{
+    componentDidMount(){
+        document.title = "Regidores - Municipalidad Distrital de Alis";
+    }
     render(){
         return(
             <div>
@@ -18,7 +21,7 @@ export default class Regidores extends Component{
                                 </div>
                                 <div className="row mt-2 pl-3 pr-3">
                                     <div className="card card-regidor col-4">
-                                        <img src="./img/regidor-ronald.jpg" className="card-img-top card-img-top-regidor" alt=""/>
+                                        <img src="./img/regidor.png" className="card-img-top card-img-top-regidor" alt=""/>
                                         <div className="card-body card-body-regidor">
                                             <h5>
                                                 <small className="text-muted d-flex bd-highlight">RONALD RUBEN </small>
@@ -28,7 +31,7 @@ export default class Regidores extends Component{
                                         </div>
                                     </div>  
                                     <div className="card card-regidor col-4">
-                                        <img src="./img/PONCE.jpg" className="card-img-top card-img-top-regidor" alt=""/>
+                                        <img src="./img/regidor.png" className="card-img-top card-img-top-regidor" alt=""/>
                                         <div className="card-body card-body-regidor">
                                             <h5>
                                                 <small className="text-muted d-flex bd-highlight">YELITZA MILAGROS </small>
@@ -38,7 +41,7 @@ export default class Regidores extends Component{
                                         </div>
                                     </div>
                                     <div className="card card-regidor col-4">
-                                        <img src="./img/regidor-carlos.jpg" className="card-img-top card-img-top-regidor" alt=""/>
+                                        <img src="./img/regidor.png" className="card-img-top card-img-top-regidor" alt=""/>
                                         <div className="card-body card-body-regidor">
                                             <h5>
                                                 <small className="text-muted d-flex bd-highlight">CARLOS ALBERTO </small>
@@ -49,7 +52,7 @@ export default class Regidores extends Component{
                                     </div>
                                     <div className="row mt-2 ml-1 d-flex justify-content-around">
                                     <div className="card card-regidor col-4 mt-2">
-                                        <img src="./img/regidora-samy.jpg" className="card-img-top card-img-top-regidor" alt=""/>
+                                        <img src="./img/regidor.png" className="card-img-top card-img-top-regidor" alt=""/>
                                         <div className="card-body card-body-regidor">
                                             <h5>
                                                 <small className="text-muted d-flex bd-highlight">DZAMILIA MAGDE </small>
@@ -59,7 +62,7 @@ export default class Regidores extends Component{
                                         </div>
                                     </div>
                                     <div className="card card-regidor col-4 mt-2">
-                                        <img src="./img/regidor-hugo.jpg" className="card-img-top card-img-top-regidor" alt=""/>
+                                        <img src="./img/regidor.png" className="card-img-top card-img-top-regidor" alt=""/>
                                         <div className="card-body card-body-regidor">
                                             <h5>
                                                 <small className="text-muted d-flex bd-highlight">HUGO </small>

@@ -4,6 +4,12 @@ $principal:#0BBF6B;
 $secundario: #0BBF7D;
 $resto: #011D35;
 $rgba-principal:rgba(1, 29, 53, 0.2);
+.alert-danger-munialis{
+    color: #FC3E2E;
+    font-weight: bold;
+    // padding: 1rem;
+    font-size: 1rem;
+}
 body
 {
     font-family: 'Judson', serif;
@@ -22,6 +28,9 @@ h1, h2, h3, h4, h5, h6{
 }
 a, button, link{
     font-family: 'Montserrat', sans-serif;
+}
+.form-control, textarea, .form-control-file .input-timepicker{
+    border: 1px solid #011D35;
 }
 //ESTILOS CONTAINER INFORMATION
 .informacion-alis
@@ -401,33 +410,68 @@ SECCION AREAS TEMATICAS
 .footer-noticiatarjeta
 {
     text-decoration-line: none;
-    color: #ffffff;
-    background: #820047;
+    background: url('/img/informacion.png');
+    color: $resto;
     text-decoration-style: none;
+    border:0px 1px solid;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    border-color: $resto;
+    transition: transform .3s;
 }
 .footer-noticiatarjeta:hover{
     text-decoration-line: none;
     color: #ffffff;
+    background: rgba(1, 29, 53, 0.9);
+}
+.footer-noticiatarjeta:hover h3{
+    // font-size: 1rem;
+    transform: scale(1.1) rotate(1deg);
 }
 .footer-culturatarjeta
 {
-    background: #1BCF15;
-    color:#ffffff;
-    text-decoration-line:none;
+    text-decoration-line: none;
+    background: url('/img/informacion.png');
+    color: $resto;
+    text-decoration-style: none;
+    border:0px 1px solid;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    border-color: $resto;
+    transition: transform .3s;
 }
 .footer-culturatarjeta:hover{
     text-decoration-line: none;
     color: #ffffff;
+    background: rgba(1, 29, 53, 0.9);
+}
+.footer-culturatarjeta:hover h3{
+    // font-size: 1rem;
+    transform: scale(1.1) rotate(1deg);
 }
 .footer-dsocialtarjeta
 {
-    background: #CF5D0A;
-    color: #ffffff;
     text-decoration-line: none;
+    background: url('/img/informacion.png');
+    color: $resto;
+    text-decoration-style: none;
+    border:0px 1px solid;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    border-color: $resto;
+    transition: transform .3s;
 }
 .footer-dsocialtarjeta:hover{
     text-decoration-line: none;
     color: #ffffff;
+    background: rgba(1, 29, 53, 0.9);
+}
+.footer-dsocialtarjeta:hover h3{
+    // font-size: 1rem;
+    transform: scale(7.1) rotate(3deg);
 }
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.tab-ubicacion 
 {
@@ -461,6 +505,13 @@ footer
 /*::::::::::::::::::::::::::::
 ESTILOS SIDEBAR MENU PARA EL ADMINISTRADOR
 :::::::::::::::::::::::::::::*/
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: $principal;
+}
+.bg-menu-admin{
+    background: $resto;
+}
 .sidebar{
     position: absolute;
     width: 150px;
@@ -560,6 +611,7 @@ ESTILOS MUNICIPALIDAD
     border-bottom: 1px solid $secundario;
     transition: all 0.6s ease;
     -webkit-transition: all 0.6s ease;
+    background: #FE4536;
 }
 .submenuautoridades:hover:before {
     content: '';
@@ -849,20 +901,23 @@ CALENDARIO FESTIVO
 // .imagen-calendario-festivo{
 //      filter: contrast(1.3) brightness(1.1) saturate(1.5);
 // }
-.imagen-calendario-festivo:hover:before {
-    z-index: 2;
-    mix-blend-mode: multiply;
-    //box-shadow: 0 0 100px rgba(0,0,0,0.5) inset;
-    background: rgba(36, 136, 81, 0.8);
-    border-radius: 1rem 5rem;
-  }
-.imagen-calendario-festivo:hover:after {
-    z-index: 3;
-    mix-blend-mode: hard-light;
-    //box-shadow: 0 0 500px rgba(0,0,0,0.6) inset;
-    background: rgba(198, 155, 0, 0.3);
-    border-radius: 1rem 5rem;
-  }
+// .imagen-calendario-festivo:hover:before {
+//     z-index: 2;
+//     mix-blend-mode: multiply;
+//     //box-shadow: 0 0 100px rgba(0,0,0,0.5) inset;
+//     // background: rgba(36, 136, 81, 0.8);
+//     border-radius: 1rem 5rem;
+//   }
+// .imagen-calendario-festivo:hover:after {
+//     z-index: 3;
+//     mix-blend-mode: hard-light;
+//     //box-shadow: 0 0 500px rgba(0,0,0,0.6) inset;
+//     background: rgba(198, 155, 0, 0.3);
+//     border-radius: 1rem 5rem;
+//     height: 21rem;
+//     margin-top: 10rem;
+//   }
+
 /*::::::::::::::::::::::::::::::::
 REGISTRO CIVIL
 :::::::::::::::::::::::::::::::::*/
@@ -941,3 +996,70 @@ EMBEBIDO YOUTUBE
     border-image: linear-gradient(to button, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.1) 100%) 1;
 }
 
+/*:::::::::::::::::::CREAR NOTICIAS ADMINISTRADOR*/
+.espacio-crearnoticias{
+    margin-top:2.5rem;
+}
+.sidebar-crear-noticia{
+    position: fixed;
+    width: 14rem;
+    color: #ffffff;
+    background: $resto;
+    height: 100%;
+}
+.sidebar-crear-noticia a{
+    color: #ffffff;
+}
+/*:::::::::::NOTICIAS::::::::::::*/
+.ver-mas-noticias
+{
+    background: #ffffff;
+    color: #111111;
+    border-color: #35001D;
+    border: 1.3px solid;
+}
+.card-title-noticias{
+    border-left: 6px solid $principal;
+    padding: 4px;
+}
+.card-body-noticias{
+    background-color: rgba(1, 29, 53, 0.1);
+}
+.lista-navbar-noticia li{
+    list-style-type: none;
+}
+.lista-navbar-noticia li a{
+    color: $resto;
+}
+/*:::::::::::CREAR ACTIVIDADES:::::::::::::::::::*/
+.fechadesarrollodatepicker{
+    border: none;
+}
+/*:::::::::::ACTIVIDADES::::::::::::::*/
+.hr-actividades{
+    background: $resto;
+}
+.img-activiades{
+    border: 1px solid $resto;
+    border-radius: 5px;
+}
+.media-body-activiades a{
+    color: $resto;
+    &:hover{
+        text-decoration: none;
+    }
+}
+.list-menu-actividades li{
+    list-style: none;
+}
+.list-menu-actividades li a{
+    color: $resto;
+    &:hover{
+        text-decoration: none;
+        text-decoration-line: none;
+    }
+}
+/*:::::::::::OBRAS CLIENTE:::::::*/
+.list-categoria-obrasid{
+    list-style: none;
+}

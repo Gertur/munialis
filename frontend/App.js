@@ -21,11 +21,6 @@ require('./img/logo2.png');
 require('./img/marca-alis.png');
 require('./img/logo.png');
 require('./img/saludo-alcalde.jpg')
-require('./img/PONCE.jpg');
-require('./img/regidor-hugo.jpg')
-require('./img/regidor-carlos.jpg')
-require('./img/regidor-ronald.jpg')
-require('./img/regidora-samy.jpg')
 require('./img/mision.jpg')
 require('./img/vision.jpg')
 require('./img/sub-gerencia-desarrollo-social.jpg')
@@ -43,14 +38,15 @@ require('./img/slide4.jpg')
 require('./img/aniversario-comunal.jpg')
 require('./img/limpia-cequia.jpg')
 require('./img/palla-alisina.jpg')
-
+require('./img/regidor.png')
+require('./img/azucena.jpeg')
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'animate.css/animate.min.css';
 import 'hover.css/css/hover-min.css';
 import'./styles/main.scss';
 import './script/main';
-
+// import './script/validaciones';
 
 import Index from './components/client/Index/Index';
 import Municipalidad from './components/client/Municipalidad/Municipalidad';
@@ -66,6 +62,16 @@ import Calendariofestivo from './components/client/calendariofestivo/Calendariof
 import Registrocivil from './components/client/registrocivil/Registrocivil';
 import Transparencia from './components/client/transparencia/Transparencia';
 import Desarrollosocial from './components/client/desarrollosocial/Desarrollosocial';
+import Noticias from './components/client/noticias/Noticias';
+import NoticiaId from './components/client/noticias/NoticiaId';
+import Actividades from './components/client/actividades/Actividades';
+import Actividadesid from './components/client/actividades/Actividadesid';
+import Consultas from './components/client/consultas/Consultas';
+import Signup from './components/client/auth/Signup';
+import Centenario from './components/client/centenario/Centenario';
+import Obras from './components/client/obras/Obras';
+import ObraId from './components/client/obras/ObraId';
+
 function App() {
     return (
       <Router>
@@ -83,7 +89,16 @@ function App() {
             <Route path="/registro-civil" component={Registrocivil} />
             <Route path="/transparencia" component={Transparencia} />
             <Route path="/desarrollo-social" component={Desarrollosocial} />
-            
+            <Route path="/noticias" component={Noticias} />
+            <Route path="/noticia/:id" exact strict component={NoticiaId} />
+            <Route path="/todas-actividades" exact strict component={Actividades} />
+            <Route path="/todas-actividades/:id" exact strict component={Actividadesid} />
+            <Route path="/consultas" exact strict component={Consultas} />
+            <Route path="/signup" exact strict component={Signup} />
+            <Route path='/rumbo_centenario' component={Centenario}/>
+            <Route path='/obras' component={Obras}/>
+            <Route path="/obra/:id" exact strict component={ObraId}/>
+            <Route path="/obrass/:id" exact strict component={ObraId}/>
       </Router>
     );
   }

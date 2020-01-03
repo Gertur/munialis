@@ -3,6 +3,9 @@ import Navegacion from '../Partials/Navegacion';
 import Footer from '../Partials/Footer';
 import Sidebar from '../Partials/Sidebar';
 export default class Municipalidad extends Component{
+    componentDidMount(){
+        document.title = "Saludo del Alcalde - Municipalidad Distrital de Alis";
+    }
     render(){
         return(
             <div>

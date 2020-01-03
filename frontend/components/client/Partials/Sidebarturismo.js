@@ -12,7 +12,7 @@ export default class Sidebar extends Component{
                 Recursos Turísticos
                 <i className="fas fa-angle-right hvr-icon"></i>
             </Link>
-            <a className="menuautoridades hvr-icon-hang p-3" data-toggle="collapse" data-target="#menuautoridades" aria-controls="menuautoridades" aria-expanded="false" aria-label="Toggle navigaation">
+            {/* <a className="menuautoridades hvr-icon-hang p-3" data-toggle="collapse" data-target="#menuautoridades" aria-controls="menuautoridades" aria-expanded="false" aria-label="Toggle navigaation">
                     Servicios Turísticos
                     <i className="fas fa-angle-down hvr-icon"></i>
                 </a>
@@ -40,10 +40,10 @@ export default class Sidebar extends Component{
                     </Link>
                 </div>
             </div> 
-            <Link className="menuautoridades hvr-icon-hang p-3" to="/galeria-de-fotos-turismo">
+            <Link className="menuautoridades hvr-icon-hang p-3" to="">
                 Galeria de Fotos
                 <i className="fas fa-angle-right hvr-icon"></i>
-            </Link>
+            </Link> */}
         </div>
         )
     }

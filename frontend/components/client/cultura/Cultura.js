@@ -3,6 +3,9 @@ import Navegacion from '../Partials/Navegacion';
 import Footer from '../Partials/Footer';
 import Sidebarcultura from '../Partials/Sidebarcultura'
 export default class Turismo extends Component{
+    componentDidMount(){
+        document.title = "Cultura - Municipalidad Distrital de Alis";
+    }
     render(){
         return(
             <div>
@@ -24,7 +27,6 @@ export default class Turismo extends Component{
                         </div>
                         <div className="col-12 col-lg-3 d-sm-inline">
                             <Sidebarcultura/>
-                            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, libero qui alias, iure hic obcaecati ipsam temporibus accusantium itaque, magni amet ipsa ratione accusamus voluptate quae nulla nihil iste unde?</div>
                         </div>
                     </div>
                 </div>

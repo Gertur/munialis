@@ -1,8 +1,14 @@
 import React,{Component} from 'react';
 import Navegacion from '../Partials/Navegacion';
 import Footer from '../Partials/Footer';
-import Sidebarcultura from '../Partials/Sidebarcultura'
+import Sidebarcultura from '../Partials/Sidebarcultura';
+import WOW from 'wow.js/dist/wow';
+
 export default class Turismo extends Component{
+    componentDidMount(){
+        new WOW().init();
+        document.title = `Calendario festivo - Municipalidad Distrital de Alis`;
+    }
     render(){
         return(
             <div>
@@ -17,8 +23,8 @@ export default class Turismo extends Component{
                                 <div className="col-12 pl-4 pr-3">
                                     <p className="h4 text-justify">Alis tiene diversas manifestaciones culturales, todos ellos ligados con la naturaleza y la armonía del hombre con la tierra, a continuación, enumeramos algunas de sus principales festividades.</p>
                                     <ul className="timeline">
-                                        <li>
-                                            <div className="timeline__direction-r">
+                                        <li className="">
+                                            <div className="timeline__direction-r wow slideInRight">
                                                 <div className="timeline__flag-wrapper h5">
                                                     <span className="timeline__flag">FIESTA DE LA NEGRERÍA</span>
                                                     <span class="timeline__time-wrapper"><span class="time"> <strong>01 - Enero</strong></span></span>
@@ -32,13 +38,13 @@ export default class Turismo extends Component{
                                             </div>
                                         </li>
                                         <li>
-                                            <div className="timeline__direction-l">
+                                            <div className="timeline__direction-l wow slideInLeft">
                                                 <div className="timeline__flag-wrapper h5">
                                                     <span className="timeline__flag">ANIVERSARIO DEL DISTRITO DE ALIS</span>
                                                     <span class="timeline__time-wrapper"><span class="time"> <strong>Febrero</strong></span></span>
                                                 </div>
                                                 <div className="timeline__desc h5 text-justify">
-                                                Aniversario de la Creación Política del Distrito de Alis, asi mismo de lleva a cabo el carnaval Alisino.
+                                                Aniversario de la Creación Política del Distrito de Alis, conjuntamente con el carnaval Alisino.
                                                 </div>
                                                 <figure className="imagen-calendario-festivo mt-2">
                                                     <img src="./img/aniversario-comunal.jpg" alt="" className="w-100"/>
@@ -46,7 +52,7 @@ export default class Turismo extends Component{
                                             </div>
                                         </li>
                                         <li>
-                                            <div className="timeline__direction-r">
+                                            <div className="timeline__direction-r wow slideInRight">
                                                 <div className="timeline__flag-wrapper h5">
                                                     <span className="timeline__flag">LA LIMPIA ACEQUIA</span>
                                                     <span class="timeline__time-wrapper"><span class="time"> <strong>Junio</strong></span></span>
@@ -61,7 +67,7 @@ export default class Turismo extends Component{
                                             </div>
                                         </li>
                                         <li>
-                                            <div className="timeline__direction-l">
+                                            <div className="timeline__direction-l wow slideInLeft">
                                                 <div className="timeline__flag-wrapper h5">
                                                     <span className="timeline__flag">LA PALLA ALISINA</span>
                                                     <span className="timeline__time-wrapper"><span className="time"> <strong>14 - 17 - Agosto</strong></span></span>
@@ -75,13 +81,13 @@ export default class Turismo extends Component{
                                             </div>
                                         </li>
                                         <li>
-                                            <div className="timeline__direction-r">
+                                            <div className="timeline__direction-r wow slideInRight">
                                                 <div className="timeline__flag-wrapper h5">
                                                     <span className="timeline__flag">ANIVERSARIO DE LA C.C.S.L</span>
                                                     <span class="timeline__time-wrapper"><span class="time"><strong>Setiembre</strong></span></span>
                                                 </div>
                                                 <div className="desc h5 text-justify">
-                                                <strong>Aniversario de la Comunidad Campesina San Lorenzo de Alis</strong>
+                                                <strong>Aniversario de la Comunidad Campesina San Lorenzo de Alis, una semana llena de actividades y festividades.</strong>
                                                 </div>
                                                 <figure className="imagen-calendario-festivo mt-2">
                                                     <img src="./img/aniversario-comunal.jpg" alt="" className="w-100"/>
@@ -89,7 +95,7 @@ export default class Turismo extends Component{
                                             </div>
                                         </li>
                                         <li>
-                                            <div className="timeline__direction-l">
+                                            <div className="timeline__direction-l wow slideInLeft">
                                                 <div className="timeline__flag-wrapper h4">
                                                     <span className="timeline__flag">FIESTA DE LAS AZUCENAS</span>
                                                     <span className="timeline__time-wrapper"><span className="time"> <strong>25 - Diciembre</strong></span></span>
@@ -98,7 +104,7 @@ export default class Turismo extends Component{
                                                 Se danza en honor al Niño Jesús cada 25 de diciembre.
                                                 </div>
                                                 <figure className="imagen-calendario-festivo mt-2">
-                                                    <img src="./img/aniversario-comunal.jpg" alt="" className="w-100"/>
+                                                    <img src="./img/azucena.jpeg" alt="" className="w-100"/>
                                                 </figure>
                                             </div>
                                         </li>
@@ -108,7 +114,6 @@ export default class Turismo extends Component{
                         </div>
                         <div className="col-12 col-lg-3 d-sm-inline">
                             <Sidebarcultura/>
-                            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, libero qui alias, iure hic obcaecati ipsam temporibus accusantium itaque, magni amet ipsa ratione accusamus voluptate quae nulla nihil iste unde?</div>
                         </div>
                     </div>
                 </div>
