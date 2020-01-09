@@ -7,7 +7,7 @@ require('./img/informacion.png');
 require('./img/slide1.jpg');
 require('./img/slide2.jpg');
 require('./img/slide3.jpg');
-require('./img/alcalde.jpg');
+//require('./img/alcalde.jpg');
 require('./img/hobras.svg');
 require('./img/salud.svg');
 require('./img/educacion.svg');

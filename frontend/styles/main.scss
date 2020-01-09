@@ -1063,3 +1063,65 @@ EMBEBIDO YOUTUBE
 .list-categoria-obrasid{
     list-style: none;
 }
+.img{
+    &-container{
+
+    }
+    &-content{
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        flex-wrap: wrap;
+    }
+    &-upload{
+        border-radius: 10px;
+        border: #00bf8f dashed 2px;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        &:focus{
+            border: #1D976C dashed 2px;
+        }
+    }
+    &-view{
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        border-radius: 20px;
+        margin: 0 10px 10px 10px;
+        &:before{
+            content: " ";
+            padding: 10px;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            z-index: 1;
+        }
+        img{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            
+        }
+        &:hover{
+            i{
+                color: #fff;
+            }
+        }
+        i{
+            color: rgb(212, 47, 47);
+            z-index: 1;
+            position: absolute;
+
+        }
+    }
+}
