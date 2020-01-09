@@ -7,7 +7,9 @@ const URI='http://localhost:3000';
 
 export default class Centenario extends Component{
     state={
-
+        nombres:'',
+        descripcion:'',
+        email:'',
         data:{
             images:[],
             file:[],
@@ -79,6 +81,30 @@ export default class Centenario extends Component{
             }
         })
     }
+    onInputOnChangeName = async (e) =>{
+        const nombres = e.target.value;
+
+        this.setState((state)=>{
+            return {
+                "nombres":nombres
+            }
+        })
+
+    }
+    onInputOnChangeDesc = (e) =>{
+        const descripcion = e.target.value;
+        this.setState({
+            "descripcion":descripcion
+        })
+    }
+    onInputOnChangeEmail = (e) =>{
+        const email = e.target.value;
+
+        this.setState({
+            "email":email
+        })
+    }
+
     onUploadImg(){
         exampleFormControlFile1.click()
     }
@@ -86,8 +112,15 @@ export default class Centenario extends Component{
         document.title = `Rumbo al Centenario - Municipalidad Distrital de Alis`
     }
     onSubmit=async (e)=>{
-        console.log("=========0");
-        e.preventDefault();
+        e.preventDefault();        
+        var {email,nombres,descripcion,data}=this.state
+        var response=await axios.post(`${URI}/api/centenario`,{
+            email,
+            nombres,
+            descripcion,
+            data,
+        })
+        console.log(response);
     }
     render(){
         return(
@@ -98,11 +131,15 @@ export default class Centenario extends Component{
                         <p className="h4">Este es un espacio donde usted Ciudadano Alisino podra colaborar con materiales históricos de nuestro Distrito(Fotos hitóricas, Documentos históricos, Anecdotas, Datos curisos, etc).</p>
                         <form onSubmit={this.onSubmit} className="" id="formularionoticia">
                             <div className="form-group">
-                                <input type="text" id="titulonoticia" className="form-control" name="titulo" placeholder="Nombres y Apellidos del Colaborador" onChange={this.onInputOnChangeTitulo}/>
+                                <input type="text" id="titulonoticia" className="form-control" name="titulo" placeholder="Nombres y Apellidos del Colaborador" onChange={this.onInputOnChangeName}/>
                                 <span className="alert-danger-munialis" role="alert" id="ibtitulonoticia"></span>
                             </div>
                             <div className="form-group">
-                                <input type="text" id="titulonoticia" className="form-control" name="titulo" placeholder="Descripcion de la informacion Brindada" onChange={this.onInputOnChangeTitulo}/>
+                                <input type="text" id="titulonoticia" className="form-control" name="description" placeholder="Descripcion de la informacion Brindada" onChange={this.onInputOnChangeDesc}/>
+                                <span className="alert-danger-munialis" role="alert" id="ibtitulonoticia"></span>
+                            </div>
+                            <div className="form-group">
+                                <input type="email" id="email" className="form-control" name="email" placeholder="Correo" onChange={this.onInputOnChangeEmail}/>
                                 <span className="alert-danger-munialis" role="alert" id="ibtitulonoticia"></span>
                             </div>
                             <div className="form-group">

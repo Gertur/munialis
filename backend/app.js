@@ -54,6 +54,7 @@ app.use(express.static(path.join(__dirname,'public')));
 app.use(('/api/noticias'),require('./routes/noticias'));
 app.use(('/api/actividades'), require('./routes/actividades'));
 app.use(('/api/auth'),require('./routes/auth'));
+app.use(('/api/centenario'),require('./routes/centenario'));
 app.use(('/api/obras'), require('./routes/obras'));
 //::::::::MAPEO PARA RENDERIZAR HTML, DESDE REACT EN EL INDEX.HTML::::://
 app.get('/*', function(req, res, next) {
