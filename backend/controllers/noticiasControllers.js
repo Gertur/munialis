@@ -19,20 +19,20 @@ noticiasControllers.getNoticia= async (req, res)=>{
 }
 noticiasControllers.deleteNoticia= async (req, res)=>{
     await Noticias.findByIdAndDelete(req.params.id);
-    res.json({mensaje:"Noticias Elminada"})
+    res.status(200).send({
+        message:"¡Noticia eliminada satisfactoriamente!"
+    });
 }
 noticiasControllers.createNoticias =async (req,res) =>{
     const s3 = new aws.S3({
-        // accessKeyId:'AKIASTR5S4XJC3H5SKHQ',
-        // secretAccessKey:'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',
-        // Bucket:'municipalidadalis'
+        accessKeyId:'AKIASTR5S4XJC3H5SKHQ',
+        secretAccessKey:'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',
+        Bucket:'municipalidadalis'
     })
     
-    const {imagen,titulo,descripcion,segundadescripcion,pdf} = req.body;
+    const {imagen,titulo,descripcion,segundadescripcion} = req.body;
     const base64Data= new Buffer.from(imagen.replace(/^data:image\/\w+;base64,/, ""), 'base64');
     const type = imagen.split(';')[0].split('/')[1];
-
-    const base64pdf = new Buffer.from(pdf,'base64');
 
     var paramas = {
         Bucket:'municipalidadalis',
@@ -42,21 +42,14 @@ noticiasControllers.createNoticias =async (req,res) =>{
         ContentEncoding: 'base64', // required
         ContentType: `image/${type}`
     }
-    var paramaspdf = {
-        Bucket:'municipalidadalis',
-        Key:`pdf01.pdf`,
-        Body:base64pdf,
-        ACL:'public-read',
-        ContentEncoding: 'base64', // required
-        ContentType: "application/pdf"
-    }
     try{
         const {Location} = await s3.upload(paramas).promise();
-        await s3.upload(paramaspdf).promise();
-        const imageLocation = Location; 
-        res.send(console.log(base64Data));
+        const imageLocation = Location;
         newNoticias = new Noticias({titulo,descripcion,segundadescripcion,imageLocation});
         newNoticias.save();
+        res.status(200).send({
+            message:"¡Noticia registrada satisfactoriamente!"
+        });
     }
     catch(error){
         res.send(console.log(error));

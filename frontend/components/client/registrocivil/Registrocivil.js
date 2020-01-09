@@ -71,9 +71,9 @@ export default class Registrocivil extends Component{
                                             <p className="card-text"><i className="fas fa-calendar-week mr-2"></i>Lunes a Viernes de 9:00 am a 1:00 pm</p>
                                             <p className="card-text"><i className="fas fa-calendar-week mr-2"></i>Lunes a Viernes de 3:00 pm a 7:00 pm</p>
                                             <p className="card-text"><i className="fas fa-calendar-week mr-2"></i>Informes e inscripciones: Municipalidad Distrital de Alis, 3er Piso.</p>
-                                            <p className="card-text"><i className="fas fa-user mr-2"></i>Registrador Civil: Arturo Huaraca Espejo.</p>
-                                            <p className="card-text"><i className="fas fa-phone-square-alt mr-2"></i>966873728</p>
-                                            <p className="card-text"><i className="fas fa-envelope mr-2"></i>gerturh@gmail.com</p>
+                                            <p className="card-text"><i className="fas fa-user mr-2"></i>Registrador Civil: Ciro ARAUCO RODRIGUEZ.</p>
+                                            <p className="card-text"><i className="fas fa-phone-square-alt mr-2"></i>964416562</p>
+                                            <p className="card-text"><i className="fas fa-envelope mr-2"></i>ciroarauco@gmail.com</p>
                                         </div>
                                     </div>
                                 </div>

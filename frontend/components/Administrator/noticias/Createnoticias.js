@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import {Link} from 'react-router-dom';
 const URI='http://localhost:3000';
+import {ToastsContainer, ToastsStore, ToastsContainerPosition} from 'react-toasts';
 export default class Createnoticias extends Component{
     state={
         noticias:[],
@@ -14,8 +15,7 @@ export default class Createnoticias extends Component{
         errortitulo:null,
         errordescripcion:null,
         errorsegundadescripcion:null,
-        errorfile:null,
-        pdfseleccionado:null
+        errorfile:null
     }
     async componentDidMount(){
         this.getNoticias();
@@ -53,17 +53,6 @@ export default class Createnoticias extends Component{
             
         }
         
-    }
-    onChangefileuploadpdf = e =>{
-        const filepdf = e.target.files[0];
-        const readerdpf = new FileReader();
-        readerdpf.readAsDataURL(filepdf);
-        readerdpf.onloadend = ()=>{
-            this.setState({
-                pdfseleccionado:readerdpf.result
-            })
-            console.log(this.state.pdfseleccionado);
-        }
     }
     onInputOnChangeTitulo = (e) =>{
         const titulo = e.target.value;
@@ -150,19 +139,18 @@ export default class Createnoticias extends Component{
             }if(!this.state.errorsegundadescripcion){
                 ibsegundadescripcion.innerHTML="La noticia deve contener un segunda descripción correcta.";}
         }else{     
-            await axios.post('http://localhost:3000/api/noticias',{'imagen':this.state.imagenseleccionada,
+            var response = await axios.post('http://localhost:3000/api/noticias',{'imagen':this.state.imagenseleccionada,
             'titulo':this.state.titulo,
             'descripcion':this.state.descripcion,
-            'segundadescripcion':this.state.descripcion,
-            'pdf':this.state.pdfseleccionado})
-            await this.getNoticias();
+            'segundadescripcion':this.state.descripcion})
+            this.getNoticias();
+            ToastsStore.success(response.data.message);
         }
-        
-
     }
     deleteNoticia = async(id)=>{
-        await axios.delete(URI+'/api/noticias/'+id);
+        var response = await axios.delete(URI+'/api/noticias/'+id);
         this.getNoticias();
+        ToastsStore.error(response.data.message);
     }
     render(){
        return(
@@ -190,14 +178,15 @@ export default class Createnoticias extends Component{
                                 <input type="file" onChange={this.onChangefileupload} name="imagen" className="form-control-file" id="exampleFormControlFile1"/>
                                 <span className="alert-danger-munialis" role="alert" id="ibfile"></span>
                             </div>
-                            <div className="form-group">
+                            {/* <div className="form-group">
                                 <label htmlFor="exampleFormControlFile1pdf">Seleccione un archivo PDF</label>
                                 <input type="file" onChange={this.onChangefileuploadpdf} name="pdf" className="form-control-file" id="exampleFormControlFile1pdf"/>
-                            </div>
+                            </div> */}
                             <button className="btn btn-primary" id="enviarnoticia">
                                 Guardar Noticias
                             </button>
                         </form>
+                        <ToastsContainer store={ToastsStore} position={ToastsContainerPosition.TOP_RIGHT}/>
                     </div>
                     <div className="col-4">
                         <h5><strong>Todas las Noticias</strong></h5>

@@ -6,7 +6,7 @@ const URI='http://localhost:3000';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import TimePicker from 'react-time-picker';
-
+import {ToastsContainer, ToastsStore, ToastsContainerPosition} from 'react-toasts';
 import { registerLocale, setDefaultLocale } from  "react-datepicker";
 import es from 'date-fns/locale/es';
 registerLocale('es',es);
@@ -44,7 +44,13 @@ export default class Createactividades extends Component{
         descripcion:'',
         imagenseleccionada:null,
         fechadesarrollo: new Date(),
-        horadesarrollo:'10:00'
+        horadesarrollo:'00:00',
+        errortitulo:null,
+        errorlugar:null,
+        errordescripcion:null,
+        errorfecha:null,
+        errorhora:null,
+        errorfile:null
     }
     async componentDidMount(){
         this.getActividades();
@@ -56,51 +62,199 @@ export default class Createactividades extends Component{
         })
     }
 
-    onSubmitActividad = async (e) =>{
-        e.preventDefault();
-        const newActividad ={
-            titulo:this.state.titulo,
-            lugardesarrollo:this.state.lugardesarrollo,
-            descripcion:this.state.descripcion,
-            fechadesarrollo:this.state.fechadesarrollo,
-            horadesarrollo:this.state.horadesarrollo,
-            imagen:this.state.imagenseleccionada
+    onInputOnChangetitulo = e =>{
+        if(e.target.value === ""){
+            ibtituloactividad.innerHTML="La actividad deve contener un título.";
+            this.state({
+                errortitulo:false
+            })
+        }else{
+            ibtituloactividad.innerHTML="";
+            this.setState({
+                titulo:e.target.value,
+                errortitulo:true
+            })
         }
-        await axios.post(URI+'/api/actividades',newActividad);
-        this.getActividades();
     }
-
-    onInputOnChange = e =>{
-        this.setState({
-            [e.target.name]:e.target.value
-        })
+    onInputOnChangelugar = e =>{
+        if(e.target.value === ""){
+            iblugaractividad.innerHTML="La actividad deve contener un lugar de desarrollo.";
+            this.setState({
+                errorlugar:false
+            })
+        }else{
+            iblugaractividad.innerHTML="";
+            this.setState({
+                lugardesarrollo:e.target.value,
+                errorlugar:true
+            })
+        }
+    }
+    onInputOnChangedescripcion = e =>{
+        if(e.target.value === ""){
+            ibdescripcionactividad.innerHTML="La actividad deve contener una descripción.";
+            this.setState({
+                errordescripcion:false
+            })
+        }else{
+            ibdescripcionactividad.innerHTML="";
+            this.setState({
+                descripcion:e.target.value,
+                errordescripcion:true
+            })
+        }
+        console.log(this.state.descripcion);
     }
     onChangeDate = date =>{
-        this.setState({
-            fechadesarrollo:date
-        })
+        if(date === null){
+            ibfechaactividad.innerHTML="La actividad deve contener una fecha de desarrollo.";
+            this.setState({
+                errorfecha:false
+            })
+        }else{
+            ibfechaactividad.innerHTML="";
+            this.setState({
+                fechadesarrollo:date,
+                errorfecha:true
+            })
+        }
     }
     onChangeHora = hora =>{
-        this.setState({
-            horadesarrollo:hora
-        })
-        console.log(this.state.horadesarrollo);
+        if(hora === null){
+            ibhoraactividad.innerHTML="La actividad deve contener una hora de desarrollo.";
+            this.setState({
+                errorhora:false
+            })
+        }else{
+            ibhoraactividad.innerHTML="";
+            this.setState({
+                horadesarrollo:hora,
+                errorhora:true
+            })
+        }
     }
-    onChangefileupload = (e) =>{
+    onChangefileupload = async(e) =>{
         const file = e.target.files[0];
         const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onloadend = () =>{
+        if(file === null){
+            ibfileactividad.innerHTML="Seleccione una imagen para la actividad.";
+            await this.setState({
+                errorfile:false
+            })
+        }if(file.size >= 1000000){
+            ibfileactividad.innerHTML="La imagen no puede exceder el tamaño de 1MB.";
+            await this.setState({
+                errorfile:false
+            })
+        }else{
+            ibfileactividad.innerHTML="";
+            reader.readAsDataURL(file);
+            reader.onloadend = () =>{
             this.setState({
                 imagenseleccionada:reader.result,
-                imagenombre:file.name
-            })
-            console.log(this.state.imagenseleccionada)
-        }   
+                imagenombre:file.name,
+                errorfile:true
+            })}
+        }  
+    }
+    onSubmitActividad = async (e) =>{
+        e.preventDefault();
+        if(!this.state.errortitulo){
+            ibtituloactividad.innerHTML="La actividad deve contener un título.";
+            if(!this.state.errorlugar){
+                iblugaractividad.innerHTML="La actividad deve contener un lugar de desarrollo.";
+            }if(!this.state.errordescripcion){
+                ibdescripcionactividad.innerHTML="La actividad deve contener una descripción.";
+            }if(!this.state.errorfecha){
+                ibfechaactividad.innerHTML="La actividad deve contener una fecha de desarrollo.";
+            }if(!this.state.errorhora){
+                ibhoraactividad.innerHTML="La actividad deve contener una hora de desarrollo.";
+            }if(!this.state.errorfile){
+                ibfileactividad.innerHTML="Seleccione una imagen para la actividad.";
+            }
+        }else if(!this.state.errorlugar){
+            iblugaractividad.innerHTML="La actividad deve contener un lugar de desarrollo.";
+            if(!this.state.errortitulo){
+                ibtituloactividad.innerHTML="La actividad deve contener un título.";
+            }if(!this.state.errordescripcion){
+                ibdescripcionactividad.innerHTML="La actividad deve contener una descripción.";
+            }if(!this.state.errorfecha){
+                ibfechaactividad.innerHTML="La actividad deve contener una fecha de desarrollo.";
+            }if(!this.state.errorhora){
+                ibhoraactividad.innerHTML="La actividad deve contener una hora de desarrollo.";
+            }if(!this.state.errorfile){
+                ibfileactividad.innerHTML="Seleccione una imagen para la actividad.";
+            }
+        }else if(!this.state.errordescripcion){
+            ibdescripcionactividad.innerHTML="La actividad deve contener una descripción.";
+            if(!this.state.errortitulo){
+                ibtituloactividad.innerHTML="La actividad deve contener un título.";
+            }if(!this.state.errorlugar){
+                iblugaractividad.innerHTML="La actividad deve contener un lugar de desarrollo";
+            }if(!this.state.errorfecha){
+                ibfechaactividad.innerHTML="La actividad deve contener una fecha de desarrollo.";
+            }if(!this.state.errorhora){
+                ibhoraactividad.innerHTML="La actividad deve contener una hora de desarrollo.";
+            }if(!this.state.errorfile){
+                ibfileactividad.innerHTML="Seleccione una imagen para la actividad.";
+            }
+        }else if(!this.state.errorfecha){
+            ibfechaactividad.innerHTML="La actividad deve contener una fecha de desarrollo.";
+            if(!this.state.errortitulo){
+                ibtituloactividad.innerHTML="La actividad deve contener un título.";
+            }if(!this.state.errorlugar){
+                iblugaractividad.innerHTML="La actividad deve contener un lugar de desarrollo";
+            }if(!this.state.errordescripcion){
+                ibdescripcionactividad.innerHTML="La actividad deve contener una descripción.";
+            }if(!this.state.errorhora){
+                ibhoraactividad.innerHTML="La actividad deve contener una hora de desarrollo.";
+            }if(!this.state.errorfile){
+                ibfileactividad.innerHTML="Seleccione una imagen para la actividad.";
+            }
+        }else if(!this.state.errorhora){
+            ibhoraactividad.innerHTML="La actividad deve contener una hora de desarrollo.";
+            if(!this.state.errortitulo){
+                ibtituloactividad.innerHTML="La actividad deve contener un título.";
+            }if(!this.state.errorlugar){
+                iblugaractividad.innerHTML="La actividad deve contener un lugar de desarrollo";
+            }if(!this.state.errordescripcion){
+                ibdescripcionactividad.innerHTML="La actividad deve contener una descripción.";
+            }if(!this.state.errorfecha){
+                ibfechaactividad.innerHTML="La actividad deve contener una fecha de desarrollo.";
+            }if(!this.state.errorfile){
+                ibfileactividad.innerHTML="Seleccione una imagen para la actividad.";
+            }
+        }else if(!this.state.errorfile){
+            ibfileactividad.innerHTML="Seleccione una imagen para la actividad.";
+            if(!this.state.errortitulo){
+                ibtituloactividad.innerHTML="La actividad deve contener un título.";
+            }if(!this.state.errorlugar){
+                iblugaractividad.innerHTML="La actividad deve contener un lugar de desarrollo";
+            }if(!this.state.errordescripcion){
+                ibdescripcionactividad.innerHTML="La actividad deve contener una descripción.";
+            }if(!this.state.errorfecha){
+                ibfechaactividad.innerHTML="La actividad deve contener una fecha de desarrollo.";
+            }if(!this.state.errorhora){
+                ibhoraactividad.innerHTML="La actividad deve contener una hora de desarrollo.";
+            }
+        }else{
+            const newActividad ={
+                titulo:this.state.titulo,
+                lugardesarrollo:this.state.lugardesarrollo,
+                descripcion:this.state.descripcion,
+                fechadesarrollo:this.state.fechadesarrollo,
+                horadesarrollo:this.state.horadesarrollo,
+                imagen:this.state.imagenseleccionada
+            }
+            var response = await axios.post(URI+'/api/actividades',newActividad);
+            ToastsStore.success(response.data.message);
+            this.getActividades();
+        }
     }
     deleteActividad = async (id)=>{
-        await axios.delete(URI+'/api/actividades/'+id);
+        var response = await axios.delete(URI+'/api/actividades/'+id);
         this.getActividades();
+        ToastsStore.error(response.data.message);
     }
     render(){
         const meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
@@ -111,32 +265,39 @@ export default class Createactividades extends Component{
                         <h2>Registrar una nueva Actividad</h2>
                         <form onSubmit={this.onSubmitActividad} className="card-body">
                             <div className="form-group">
-                                <input type="text" className="form-control" name="titulo" placeholder="Titulo de la Actividad" onChange={this.onInputOnChange}/>
+                                <input type="text" className="form-control" name="titulo" placeholder="Titulo de la Actividad" onChange={this.onInputOnChangetitulo}/>
+                                <span className="alert-danger-munialis" role="alert" id="ibtituloactividad"></span>
                             </div>
                             <div className="form-group">
-                                <input type="text" className="form-control" name="lugardesarrollo" placeholder="Lugar de Desarrollo de la Actividad" onChange={this.onInputOnChange}/>
+                                <input type="text" className="form-control" name="lugardesarrollo" placeholder="Lugar de Desarrollo de la Actividad" onChange={this.onInputOnChangelugar}/>
+                                <span className="alert-danger-munialis" role="alert" id="iblugaractividad"></span>
                             </div>
                             <div className="form-group">
-                            <textarea name="descripcion" cols="85" rows="3" placeholder="Descripcion de la Actividad que se llevara a cabo." onChange={this.onInputOnChange}></textarea>
+                                <textarea name="descripcion" cols="85" rows="3" placeholder="Descripcion de la Actividad que se llevara a cabo." onChange={this.onInputOnChangedescripcion}></textarea><br/>
+                                <span className="alert-danger-munialis" role="alert" id="ibdescripcionactividad"></span>
                             </div>
                             <div className="form-group">
                                 <label className="mr-3" htmlFor="fechadesarrollo">Seleccione la Fecha en que se llevara a cabo la Actividad:</label>
-                                <DatePicker locale="es" id="fechadesarrollo" selected={this.state.fechadesarrollo} className="form-control" onChange={this.onChangeDate} value={this.state.fechadesarrollo}/>
+                                <DatePicker locale="es" id="fechadesarrollo" selected={this.state.fechadesarrollo} className="form-control" onChange={this.onChangeDate} value={this.state.fechadesarrollo}/><br/>
+                                <span className="alert-danger-munialis" role="alert" id="ibfechaactividad"></span>
                             </div>
                             <div className="form-group">
                                 <label className="mr-3" htmlFor="fechadesarrollo">Seleccione la hora de la actividad:</label>
-                                <TimePicker onChange={this.onChangeHora} className="input-timepicker" value={this.state.horadesarrollo}/>
+                                <TimePicker onChange={this.onChangeHora} className="input-timepicker" value={this.state.horadesarrollo}/><br/>
+                                <span className="alert-danger-munialis" role="alert" id="ibhoraactividad"></span>
                             </div>
                             
                             <div className="form-group">
                                 <label htmlFor="image_ferente">Seleccione una imagen referente a la actividad a desarrollarse:</label>
                                 <input type="file" onChange={this.onChangefileupload} name="imagen" className="form-control-file" id="image_ferente"/>
+                                <span className="alert-danger-munialis" role="alert" id="ibfileactividad"></span>
                             </div>
 
                             <button className="btn btn-primary">
                                 Guardar Actividad
                             </button>
                         </form>
+                        <ToastsContainer store={ToastsStore} position={ToastsContainerPosition.TOP_RIGHT}/>
                     </div>
                     <div className="col-4">
                         <h5><strong>Todas las Actividades</strong></h5>

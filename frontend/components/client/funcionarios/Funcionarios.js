@@ -75,10 +75,10 @@ export default class Funcionarios extends Component{
                                                     </p>
                                                     <p className="borde-funcionarios">
                                                         <span>
-                                                        <small className="text-muted d-flex bd-highlight">ARTURO GERMAN</small>
-                                                        HUARACA ESPEJO
+                                                        <small className="text-muted d-flex bd-highlight">CIRO</small>
+                                                        ARAUCO RODRIGUEZ
                                                         </span>
-                                                        <a href="mailto:gerturh@gmail.com" className="d-flex bd-highlight card-text h5 text-reset">gerturh@gmail.com</a>
+                                                        <a href="mailto:gerturh@gmail.com" className="d-flex bd-highlight card-text h5 text-reset">ciroarauco@gmail.com</a>
                                                     </p>
                                                     <p className="borde-funcionarios">
                                                         <span>

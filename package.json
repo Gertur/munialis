@@ -56,6 +56,7 @@
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
     "react-time-picker": "^3.7.2",
+    "react-toasts": "^3.0.6",
     "timeago.js": "^4.0.1",
     "url": "^0.11.0",
     "wow.js": "^1.2.2"
